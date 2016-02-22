@@ -11,7 +11,7 @@ import nakpil.government.BIRInformation;
  *
  * @author HERU
  */
-public class Company implements Business,BIRInformation {
+public class Company implements Business,BIRInformation,Cloneable {
     
     private String BusinessName,BusinessLine,Classification,Category;
     private String TinNumber,DistrictCode;
