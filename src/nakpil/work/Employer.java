@@ -11,9 +11,9 @@ import nakpil.government.BIRInformation;
  *
  * @author HERU
  */
-public class Company implements Business,BIRInformation,Cloneable {
+public class Employer implements Business,BIRInformation,Cloneable {
     
-    private String BusinessName,BusinessLine,Classification,Category;
+    private String BusinessName,BusinessLine,Classification,Category,Address,zip;
     private String TinNumber,DistrictCode;
 
     @Override
@@ -74,6 +74,26 @@ public class Company implements Business,BIRInformation,Cloneable {
     @Override
     public String getDistrictCode() {
         return DistrictCode;
+    }
+
+    @Override
+    public void setAddress(String s) {
+        this.Address = s;
+    }
+
+    @Override
+    public String getAddress() {
+        return Address;
+    }
+
+    @Override
+    public void setZipCode(String s) {
+        this.zip = s;
+    }
+
+    @Override
+    public String getZipCode() {
+        return zip;
     }
     
     

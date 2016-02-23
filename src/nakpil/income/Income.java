@@ -26,6 +26,8 @@ public class Income implements Taxable,NonTaxable{
             put(TAXABLE_DEMINIMISBENEFITS,"0");
             put(TAXABLE_13THMONTHPAY,"0");
             put(TAXABLE_HAZARDPAY,"0");
+            put(TAX_DUE,"0");
+            put(TAX_WITHHELD,"0");
             
             //Non-Taxable Income
             put(NONTAXABLE_GROSSPAY,"0");
@@ -246,6 +248,26 @@ public class Income implements Taxable,NonTaxable{
     @Override
     public String getNonTaxableHazardPay() {
         return Data.get(NONTAXABLE_HAZARDPAY);
+    }
+
+    @Override
+    public void setTaxDue(String s) {
+        this.Data.put(TAX_DUE, s);
+    }
+
+    @Override
+    public String getTaxDue() {
+        return Data.get(TAX_DUE);
+    }
+
+    @Override
+    public void setTaxWithHeld(String s) {
+        this.Data.put(TAX_WITHHELD, s);
+    }
+
+    @Override
+    public String getTaxWithHeld() {
+        return Data.get(TAX_WITHHELD);
     }
     
     

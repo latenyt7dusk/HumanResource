@@ -12,16 +12,16 @@ package nakpil.work;
 public class JobInformation implements Job{
 
     private String Department,Position,MinDailyWage,MinMonthlyWage,MinAnnualWage,DateHired,DateSeparated,EmploymentStatus;
-    private Company MyCompany;
+    private Employer MyCompany;
     
     public JobInformation(){
-        MyCompany = new Company();
+        MyCompany = new Employer();
     }
     
-    public void setCompany(Company c){
+    public void setCompany(Employer c){
         this.MyCompany = c;
     }
-    public Company getCompany(){
+    public Employer getCompany(){
         return MyCompany;
     }
     

@@ -22,5 +22,11 @@ public abstract interface Business {
     
     public abstract void setCategory(String s);
     public abstract String getCategory();
+    
+    public abstract void setAddress(String s);
+    public abstract String getAddress();
+    
+    public abstract void setZipCode(String s);
+    public abstract String getZipCode();
 
 }

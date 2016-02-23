@@ -21,10 +21,11 @@ public class Person {
     public static final String ADDRESS = "ADDRESS";
     public static final String CONTACT = "CONTACT";
     public static final String EMAIL = "EMAIL";
+    public static final String ZIP_CODE = "ZIP_CODE";
     
     private String sname,fname,mname;
     private String bdate,sex,status;
-    private String address,contact,email;
+    private String address,zip,contact,email;
     
     public void setSurname(String s){
         this.sname = s;
@@ -43,6 +44,9 @@ public class Person {
     }
     public String getMiddlename(){
         return mname;
+    }
+    public String getFullname(){
+        return sname+", "+fname+((mname.isEmpty())? "":" "+mname);
     }
     public void setBirthdate(String s){
         this.bdate = s;
@@ -67,6 +71,12 @@ public class Person {
     }
     public String getAddress(){
         return address;
+    }
+    public void setZipCode(String s){
+        this.zip = s;
+    }
+    public String getZipCode(){
+        return zip;
     }
     public void setContactNumber(String s){
         this.contact = s;
