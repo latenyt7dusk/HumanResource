@@ -40,6 +40,7 @@ public class Income implements Taxable,NonTaxable{
             put(NONTAXABLE_DEMINIMISBENEFITS,"0");
             put(NONTAXABLE_13THMONTHPAY,"0");
             put(NONTAXABLE_HAZARDPAY,"0");
+            put(NONTAXABLE_COMPENSATION_INCOME,"0");
     }};
     
     public void setData(Map<String,String> data){
@@ -154,7 +155,27 @@ public class Income implements Taxable,NonTaxable{
     public void setNonTaxableGrossPay(String s) {
         this.Data.put(NONTAXABLE_GROSSPAY, s);
     }
+    
+    @Override
+    public void setTaxDue(String s) {
+        this.Data.put(TAX_DUE, s);
+    }
 
+    @Override
+    public String getTaxDue() {
+        return Data.get(TAX_DUE);
+    }
+
+    @Override
+    public void setTaxWithHeld(String s) {
+        this.Data.put(TAX_WITHHELD, s);
+    }
+
+    @Override
+    public String getTaxWithHeld() {
+        return Data.get(TAX_WITHHELD);
+    }
+       
     @Override
     public String getNonTaxableGrossPay() {
         return Data.get(NONTAXABLE_GROSSPAY);
@@ -249,26 +270,25 @@ public class Income implements Taxable,NonTaxable{
     public String getNonTaxableHazardPay() {
         return Data.get(NONTAXABLE_HAZARDPAY);
     }
-
+        
     @Override
-    public void setTaxDue(String s) {
-        this.Data.put(TAX_DUE, s);
+    public void setNonTaxableCompensationIncome(String s) {
+        this.Data.put(NONTAXABLE_COMPENSATION_INCOME, s);
     }
 
     @Override
-    public String getTaxDue() {
-        return Data.get(TAX_DUE);
-    }
-
-    @Override
-    public void setTaxWithHeld(String s) {
-        this.Data.put(TAX_WITHHELD, s);
-    }
-
-    @Override
-    public String getTaxWithHeld() {
-        return Data.get(TAX_WITHHELD);
+    public String getNonTaxableCompensationIncome() {
+        return Data.get(NONTAXABLE_COMPENSATION_INCOME);
     }
     
+    @Override
+    public void setTaxableCompensationIncome(String s) {
+        this.Data.put(TAXABLE_COMPENSATION_INCOME, s);
+    }
+
+    @Override
+    public String getTaxableCompensationIncome() {
+        return Data.get(TAXABLE_COMPENSATION_INCOME);
+    }
     
 }

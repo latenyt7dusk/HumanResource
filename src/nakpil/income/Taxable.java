@@ -23,6 +23,7 @@ public abstract interface Taxable {
     public static final String TAXABLE_HAZARDPAY = "TAXABLE_HAZARDPAY";
     public static final String TAX_DUE = "TAX_DUE";
     public static final String TAX_WITHHELD = "TAX_WITHHELD";
+    public static final String TAXABLE_COMPENSATION_INCOME = "TAXABLE_COMPENSATION_INCOME";
     
     public abstract void setTaxableGrossPay(String s);
     public abstract String getTaxableGrossPay();
