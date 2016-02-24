@@ -28,6 +28,7 @@ public class Income implements Taxable,NonTaxable{
             put(TAXABLE_HAZARDPAY,"0");
             put(TAX_DUE,"0");
             put(TAX_WITHHELD,"0");
+            put(TAXABLE_COMPENSATION_INCOME,"0");
             
             //Non-Taxable Income
             put(NONTAXABLE_GROSSPAY,"0");

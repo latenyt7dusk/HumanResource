@@ -61,4 +61,6 @@ public abstract interface Taxable {
     public abstract void setTaxWithHeld(String s);
     public abstract String getTaxWithHeld();
     
+    public void setTaxableCompensationIncome(String s);
+    public String getTaxableCompensationIncome();
 }
