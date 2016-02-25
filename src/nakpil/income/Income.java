@@ -12,7 +12,8 @@ import java.util.Map;
  * @author Duskmourne
  */
 public class Income implements Taxable,NonTaxable{
-
+    
+    
     private Map<String,String> Data = new HashMap(){
         {
             //Taxable Income
@@ -29,6 +30,9 @@ public class Income implements Taxable,NonTaxable{
             put(TAX_DUE,"0");
             put(TAX_WITHHELD,"0");
             put(TAXABLE_COMPENSATION_INCOME,"0");
+            put(TAX_EXCEMPTION,"0");
+            put(PREMIUM_HEALTH_EXCEMPTION,"0");
+            put(NET_COMPENSATION,"0");
             
             //Non-Taxable Income
             put(NONTAXABLE_GROSSPAY,"0");
@@ -42,6 +46,8 @@ public class Income implements Taxable,NonTaxable{
             put(NONTAXABLE_13THMONTHPAY,"0");
             put(NONTAXABLE_HAZARDPAY,"0");
             put(NONTAXABLE_COMPENSATION_INCOME,"0");
+            
+            
     }};
     
     public void setData(Map<String,String> data){
@@ -51,6 +57,8 @@ public class Income implements Taxable,NonTaxable{
     public Map<String,String> getData(){
         return Data;
     }
+    
+    
     
     @Override
     public void setTaxableGrossPay(String s) {
@@ -290,6 +298,50 @@ public class Income implements Taxable,NonTaxable{
     @Override
     public String getTaxableCompensationIncome() {
         return Data.get(TAXABLE_COMPENSATION_INCOME);
+    }
+
+    @Override
+    public void setTaxExcemptionAmount(String s) {
+        this.Data.put(TAX_EXCEMPTION, s);
+    }
+
+    @Override
+    public String getTaxExcemptionAmount() {
+        return Data.get(TAX_EXCEMPTION);
+    }
+
+    @Override
+    public void setPremiumHealthExcemptionAmount(String s) {
+        this.Data.put(PREMIUM_HEALTH_EXCEMPTION, s);
+    }
+
+    @Override
+    public String getPremiumHealthExcemptionAmount() {
+        return Data.get(PREMIUM_HEALTH_EXCEMPTION);
+    }
+
+    @Override
+    public void setNetCompensationIncome(String s) {
+        this.Data.put(NET_COMPENSATION, s);
+    }
+
+    @Override
+    public String getNetCompensationIncome() {
+        return Data.get(NET_COMPENSATION);
+    }
+
+    private double ExcessWithheld,OverWithheld;
+    
+    @Override
+    public String getExcessAmountWithheld() {
+        this.ExcessWithheld = Double.parseDouble(Data.get(TAX_DUE))-Double.parseDouble(TAX_WITHHELD);
+        return String.valueOf((ExcessWithheld <= 0)? 0:ExcessWithheld);
+    }
+    
+    @Override
+    public String getOverWithheldAmount() {
+        this.OverWithheld = Double.parseDouble(TAX_WITHHELD)-Double.parseDouble(Data.get(TAX_DUE));
+        return String.valueOf((OverWithheld <= 0)? 0:OverWithheld);
     }
     
 }

@@ -32,6 +32,10 @@ public class Dependent {
         return mName;
     }
     
+    public String getFullname(){
+        return sName+", "+fName+((mName.isEmpty())? "":" "+mName);
+    }
+    
     public void setBirtdate(String s){
         this.bDate = s;
     }
