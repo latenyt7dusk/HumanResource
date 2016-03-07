@@ -7,126 +7,124 @@ package nakpil.income;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  *
  * @author Duskmourne
  */
-public class Income implements Taxable,NonTaxable{
-    
-    
-    private Map<String,String> Data = new HashMap(){
-        {
-            //Taxable Income
-            put(TAXABLE_GROSSPAY,"0");
-            put(TAXABLE_BASICPAY,"0");
-            put(TAXABLE_HOLIDAYPAY,"0");
-            put(TAXABLE_OVERTIMEPAY,"0");
-            put(TAXABLE_NIGHTDIFFERENTIALPAY,"0");
-            put(TAXABLE_OTHERSALARY,"0");
-            put(TAXABLE_GOVERNMENTCONTRIBUTIONS,"0");
-            put(TAXABLE_DEMINIMISBENEFITS,"0");
-            put(TAXABLE_13THMONTHPAY,"0");
-            put(TAXABLE_HAZARDPAY,"0");
-            put(TAX_DUE,"0");
-            put(TAX_WITHHELD,"0");
-            put(TAXABLE_COMPENSATION_INCOME,"0");
-            put(TAX_EXCEMPTION,"0");
-            put(PREMIUM_HEALTH_EXCEMPTION,"0");
-            put(NET_COMPENSATION,"0");
-            
-            //Non-Taxable Income
-            put(NONTAXABLE_GROSSPAY,"0");
-            put(NONTAXABLE_BASICPAY,"0");
-            put(NONTAXABLE_HOLIDAYPAY,"0");
-            put(NONTAXABLE_OVERTIMEPAY,"0");
-            put(NONTAXABLE_NIGHTDIFFERENTIALPAY,"0");
-            put(NONTAXABLE_OTHERSALARY,"0");
-            put(NONTAXABLE_GOVERNMENTCONTRIBUTIONS,"0");
-            put(NONTAXABLE_DEMINIMISBENEFITS,"0");
-            put(NONTAXABLE_13THMONTHPAY,"0");
-            put(NONTAXABLE_HAZARDPAY,"0");
-            put(NONTAXABLE_COMPENSATION_INCOME,"0");
-            
-            
-    }};
-    
-    public void setData(Map<String,String> data){
+public class Income implements Taxable, NonTaxable {
+
+    private Map<String, String> Data = new HashMap();
+
+    public Income() {
+        //Taxable Income
+        this.Data.put(TAXABLE_GROSSPAY, "0");
+        this.Data.put(TAXABLE_BASICPAY, "0");
+        this.Data.put(TAXABLE_HOLIDAYPAY, "0");
+        this.Data.put(TAXABLE_OVERTIMEPAY, "0");
+        this.Data.put(TAXABLE_NIGHTDIFFERENTIALPAY, "0");
+        this.Data.put(TAXABLE_OTHERSALARY, "0");
+        this.Data.put(TAXABLE_GOVERNMENTCONTRIBUTIONS, "0");
+        this.Data.put(TAXABLE_DEMINIMISBENEFITS, "0");
+        this.Data.put(TAXABLE_13THMONTHPAY, "0");
+        this.Data.put(TAXABLE_HAZARDPAY, "0");
+        this.Data.put(TAX_DUE, "0");
+        this.Data.put(TAX_WITHHELD, "0");
+        this.Data.put(TAXABLE_COMPENSATION_INCOME, "0");
+        this.Data.put(TAX_EXCEMPTION, "0");
+        this.Data.put(PREMIUM_HEALTH_EXCEMPTION, "0");
+        this.Data.put(NET_COMPENSATION, "0");
+
+        //Non-Taxable Income
+        this.Data.put(NONTAXABLE_GROSSPAY, "0");
+        this.Data.put(NONTAXABLE_BASICPAY, "0");
+        this.Data.put(NONTAXABLE_HOLIDAYPAY, "0");
+        this.Data.put(NONTAXABLE_OVERTIMEPAY, "0");
+        this.Data.put(NONTAXABLE_NIGHTDIFFERENTIALPAY, "0");
+        this.Data.put(NONTAXABLE_OTHERSALARY, "0");
+        this.Data.put(NONTAXABLE_GOVERNMENTCONTRIBUTIONS, "0");
+        this.Data.put(NONTAXABLE_DEMINIMISBENEFITS, "0");
+        this.Data.put(NONTAXABLE_13THMONTHPAY, "0");
+        this.Data.put(NONTAXABLE_HAZARDPAY, "0");
+        this.Data.put(NONTAXABLE_COMPENSATION_INCOME, "0");
+
+    }
+
+    public final void setData(Map<String, String> data) {
         this.Data = data;
     }
-    
-    public Map<String,String> getData(){
+
+    public final Map<String, String> getData() {
         return Data;
     }
-    
-    
-    
+
     @Override
-    public void setTaxableGrossPay(String s) {
+    public final void setTaxableGrossPay(String s) {
         this.Data.put(TAXABLE_GROSSPAY, s);
     }
 
     @Override
-    public String getTaxableGrossPay() {
+    public final String getTaxableGrossPay() {
         return Data.get(TAXABLE_GROSSPAY);
     }
 
     @Override
-    public void setTaxableBasicPay(String s) {
+    public final void setTaxableBasicPay(String s) {
         this.Data.put(TAXABLE_BASICPAY, s);
     }
 
     @Override
-    public String getTaxableBasicPay() {
+    public final String getTaxableBasicPay() {
         return Data.get(TAXABLE_BASICPAY);
     }
 
     @Override
-    public void setTaxableHolidayPay(String s) {
+    public final void setTaxableHolidayPay(String s) {
         this.Data.put(TAXABLE_HOLIDAYPAY, s);
     }
 
     @Override
-    public String getTaxableHolidayPay() {
+    public final String getTaxableHolidayPay() {
         return Data.get(TAXABLE_HOLIDAYPAY);
     }
 
     @Override
-    public void setTaxableOvertimePay(String s) {
+    public final void setTaxableOvertimePay(String s) {
         this.Data.put(TAXABLE_OVERTIMEPAY, s);
     }
 
     @Override
-    public String getTaxableOvertimePay() {
+    public final String getTaxableOvertimePay() {
         return Data.get(TAXABLE_OVERTIMEPAY);
     }
 
     @Override
-    public void setTaxableNightDifferentialPay(String s) {
+    public final void setTaxableNightDifferentialPay(String s) {
         this.Data.put(TAXABLE_NIGHTDIFFERENTIALPAY, s);
     }
 
     @Override
-    public String getTaxableNightDifferentialPay() {
+    public final String getTaxableNightDifferentialPay() {
         return Data.get(TAXABLE_NIGHTDIFFERENTIALPAY);
     }
 
     @Override
-    public void setTaxableGovermentContributions(String s) {
+    public final void setTaxableGovermentContributions(String s) {
         this.Data.put(TAXABLE_GOVERNMENTCONTRIBUTIONS, s);
     }
 
     @Override
-    public String getTaxableGovermentContributions() {
+    public final String getTaxableGovermentContributions() {
         return Data.get(TAXABLE_GOVERNMENTCONTRIBUTIONS);
     }
 
     @Override
-    public void setTaxableOtherSalary(String s) {
+    public final void setTaxableOtherSalary(String s) {
         this.Data.put(TAXABLE_OTHERSALARY, s);
     }
 
     @Override
-    public String getTaxableOtherSalary() {
+    public final String getTaxableOtherSalary() {
         return Data.get(TAXABLE_OTHERSALARY);
     }
 
@@ -136,212 +134,212 @@ public class Income implements Taxable,NonTaxable{
     }
 
     @Override
-    public String getTaxableDeminimisBenifits() {
+    public final String getTaxableDeminimisBenifits() {
         return Data.get(TAXABLE_DEMINIMISBENEFITS);
     }
 
     @Override
-    public void setTaxable13thMonthPay(String s) {
+    public final void setTaxable13thMonthPay(String s) {
         this.Data.put(TAXABLE_13THMONTHPAY, s);
     }
 
     @Override
-    public String getTaxable13thMonthPay() {
+    public final String getTaxable13thMonthPay() {
         return Data.get(TAXABLE_13THMONTHPAY);
     }
-    
+
     @Override
-    public void setTaxableHazardPay(String s) {
+    public final void setTaxableHazardPay(String s) {
         this.Data.put(TAXABLE_HAZARDPAY, s);
     }
 
     @Override
-    public String getTaxableHazardPay() {
+    public final String getTaxableHazardPay() {
         return Data.get(TAXABLE_HAZARDPAY);
     }
 
     @Override
-    public void setNonTaxableGrossPay(String s) {
+    public final void setNonTaxableGrossPay(String s) {
         this.Data.put(NONTAXABLE_GROSSPAY, s);
     }
-    
+
     @Override
-    public void setTaxDue(String s) {
+    public final void setTaxDue(String s) {
         this.Data.put(TAX_DUE, s);
     }
 
     @Override
-    public String getTaxDue() {
+    public final String getTaxDue() {
         return Data.get(TAX_DUE);
     }
 
     @Override
-    public void setTaxWithHeld(String s) {
+    public final void setTaxWithHeld(String s) {
         this.Data.put(TAX_WITHHELD, s);
     }
 
     @Override
-    public String getTaxWithHeld() {
+    public final String getTaxWithHeld() {
         return Data.get(TAX_WITHHELD);
     }
-       
+
     @Override
-    public String getNonTaxableGrossPay() {
+    public final String getNonTaxableGrossPay() {
         return Data.get(NONTAXABLE_GROSSPAY);
     }
 
     @Override
-    public void setNonTaxableBasicPay(String s) {
+    public final void setNonTaxableBasicPay(String s) {
         this.Data.put(NONTAXABLE_BASICPAY, s);
     }
 
     @Override
-    public String getNonTaxableBasicPay() {
+    public final String getNonTaxableBasicPay() {
         return Data.get(NONTAXABLE_BASICPAY);
     }
 
     @Override
-    public void setNonTaxableHolidayPay(String s) {
+    public final void setNonTaxableHolidayPay(String s) {
         this.Data.put(NONTAXABLE_HOLIDAYPAY, s);
     }
 
     @Override
-    public String getNonTaxableHolidayPay() {
+    public final String getNonTaxableHolidayPay() {
         return Data.get(NONTAXABLE_HOLIDAYPAY);
     }
 
     @Override
-    public void setNonTaxableOvertimePay(String s) {
+    public final void setNonTaxableOvertimePay(String s) {
         this.Data.put(NONTAXABLE_OVERTIMEPAY, s);
     }
 
     @Override
-    public String getNonTaxableOvertimePay() {
+    public final String getNonTaxableOvertimePay() {
         return Data.get(NONTAXABLE_OVERTIMEPAY);
     }
 
     @Override
-    public void setNonTaxableNightDifferentialPay(String s) {
+    public final void setNonTaxableNightDifferentialPay(String s) {
         this.Data.put(NONTAXABLE_NIGHTDIFFERENTIALPAY, s);
     }
 
     @Override
-    public String getNonTaxableNightDifferentialPay() {
+    public final String getNonTaxableNightDifferentialPay() {
         return Data.get(NONTAXABLE_NIGHTDIFFERENTIALPAY);
     }
 
     @Override
-    public void setNonTaxableGovermentContributions(String s) {
+    public final void setNonTaxableGovermentContributions(String s) {
         this.Data.put(NONTAXABLE_GOVERNMENTCONTRIBUTIONS, s);
     }
 
     @Override
-    public String getNonTaxableGovermentContributions() {
+    public final String getNonTaxableGovermentContributions() {
         return Data.get(NONTAXABLE_GOVERNMENTCONTRIBUTIONS);
     }
 
     @Override
-    public void setNonTaxableOtherSalary(String s) {
+    public final void setNonTaxableOtherSalary(String s) {
         this.Data.put(NONTAXABLE_OTHERSALARY, s);
     }
 
     @Override
-    public String getNonTaxableOtherSalary() {
+    public final String getNonTaxableOtherSalary() {
         return Data.get(NONTAXABLE_OTHERSALARY);
     }
 
     @Override
-    public void setNonTaxableDeminimisBenifits(String s) {
+    public final void setNonTaxableDeminimisBenifits(String s) {
         this.Data.put(NONTAXABLE_DEMINIMISBENEFITS, s);
     }
 
     @Override
-    public String getNonTaxableDeminimisBenifits() {
+    public final String getNonTaxableDeminimisBenifits() {
         return Data.get(NONTAXABLE_DEMINIMISBENEFITS);
     }
 
     @Override
-    public void setNonTaxable13thMonthPay(String s) {
+    public final void setNonTaxable13thMonthPay(String s) {
         this.Data.put(NONTAXABLE_13THMONTHPAY, s);
     }
 
     @Override
-    public String getNonTaxable13thMonthPay() {
+    public final String getNonTaxable13thMonthPay() {
         return Data.get(NONTAXABLE_13THMONTHPAY);
     }
 
     @Override
-    public void setNonTaxableHazardPay(String s) {
+    public final void setNonTaxableHazardPay(String s) {
         this.Data.put(NONTAXABLE_HAZARDPAY, s);
     }
 
     @Override
-    public String getNonTaxableHazardPay() {
+    public final String getNonTaxableHazardPay() {
         return Data.get(NONTAXABLE_HAZARDPAY);
     }
-        
+
     @Override
-    public void setNonTaxableCompensationIncome(String s) {
+    public final void setNonTaxableCompensationIncome(String s) {
         this.Data.put(NONTAXABLE_COMPENSATION_INCOME, s);
     }
 
     @Override
-    public String getNonTaxableCompensationIncome() {
+    public final String getNonTaxableCompensationIncome() {
         return Data.get(NONTAXABLE_COMPENSATION_INCOME);
     }
-    
+
     @Override
-    public void setTaxableCompensationIncome(String s) {
+    public final void setTaxableCompensationIncome(String s) {
         this.Data.put(TAXABLE_COMPENSATION_INCOME, s);
     }
 
     @Override
-    public String getTaxableCompensationIncome() {
+    public final String getTaxableCompensationIncome() {
         return Data.get(TAXABLE_COMPENSATION_INCOME);
     }
 
     @Override
-    public void setTaxExcemptionAmount(String s) {
+    public final void setTaxExcemptionAmount(String s) {
         this.Data.put(TAX_EXCEMPTION, s);
     }
 
     @Override
-    public String getTaxExcemptionAmount() {
+    public final String getTaxExcemptionAmount() {
         return Data.get(TAX_EXCEMPTION);
     }
 
     @Override
-    public void setPremiumHealthExcemptionAmount(String s) {
+    public final void setPremiumHealthExcemptionAmount(String s) {
         this.Data.put(PREMIUM_HEALTH_EXCEMPTION, s);
     }
 
     @Override
-    public String getPremiumHealthExcemptionAmount() {
+    public final String getPremiumHealthExcemptionAmount() {
         return Data.get(PREMIUM_HEALTH_EXCEMPTION);
     }
 
     @Override
-    public void setNetCompensationIncome(String s) {
+    public final void setNetCompensationIncome(String s) {
         this.Data.put(NET_COMPENSATION, s);
     }
 
     @Override
-    public String getNetCompensationIncome() {
+    public final String getNetCompensationIncome() {
         return Data.get(NET_COMPENSATION);
     }
 
-    private double ExcessWithheld,OverWithheld;
-    
+    private double ExcessWithheld, OverWithheld;
+
     @Override
-    public String getExcessAmountWithheld() {
-        this.ExcessWithheld = Double.parseDouble(Data.get(TAX_DUE))-Double.parseDouble(TAX_WITHHELD);
-        return String.valueOf((ExcessWithheld <= 0)? 0:ExcessWithheld);
+    public final String getExcessAmountWithheld() {
+        this.ExcessWithheld = Double.parseDouble(Data.get(TAX_DUE)) - Double.parseDouble(TAX_WITHHELD);
+        return String.valueOf((ExcessWithheld <= 0) ? 0 : ExcessWithheld);
     }
-    
+
     @Override
-    public String getOverWithheldAmount() {
-        this.OverWithheld = Double.parseDouble(TAX_WITHHELD)-Double.parseDouble(Data.get(TAX_DUE));
-        return String.valueOf((OverWithheld <= 0)? 0:OverWithheld);
+    public final String getOverWithheldAmount() {
+        this.OverWithheld = Double.parseDouble(TAX_WITHHELD) - Double.parseDouble(Data.get(TAX_DUE));
+        return String.valueOf((OverWithheld <= 0) ? 0 : OverWithheld);
     }
-    
+
 }
